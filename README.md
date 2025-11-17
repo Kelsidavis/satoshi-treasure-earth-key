@@ -10,6 +10,7 @@ This is the solution to Earth Key #6 from Satoshi's Treasure, which had been uns
 - **Duration:** 6 years, 6 months unsolved
 
 **The Solution:**
+- **Two-layer encryption** using two passphrases from the first clause of Luke 12:2
 - Two barcodes hidden in diagonal regions: `500077` and `965642`
 - Combined value: `500077965642`
 - Most likely interpretation: Geographic coordinates `50.0077°N, 9.65642°E`
@@ -36,29 +37,46 @@ The puzzle provided a bitmap image (`quickbrownfox-doll.bmp`) and this clue:
 The Bible verse reads:
 > "Nothing is covered up that will not be revealed, or hidden that will not be known."
 
-Most people tried combining this into one passphrase. That doesn't work. The trick is understanding the grammatical structure.
+### Understanding the Clue
+
+At first, this clue seems contradictory. The instruction says "first three words, and then last 5 words" but our working solution uses the MIDDLE clause "that will not be revealed" which isn't mentioned at all. Here's why the clue actually makes perfect sense:
+
+**Luke 12:2 has two clauses:**
+1. "Nothing is covered up that will not be revealed," (9 words)
+2. "or hidden that will not be known." (7 words)
+
+**The instruction refers to the FIRST CLAUSE only:**
+- First 3 words: "nothing is covered" (words 1-3)
+- Last 5 words OF THAT CLAUSE: "that will not be revealed" (words 5-9)
+
+This interpretation is confirmed by exhaustive testing - "that will not be revealed" is the ONLY 5-word sequence from the entire verse that successfully decrypts the barcode regions. Testing all twelve possible 5-word combinations from Luke 12:2 revealed only one match.
+
+This is likely why the puzzle remained unsolved for 6+ years. Most people interpreted "last 5 words" as referring to the entire verse ("that will not be known") rather than the first clause.
 
 ---
 
 ## How I Solved It
 
-### Three-Layer Encryption
+### Two-Layer Encryption
 
-The clue hints at splitting the verse, not combining it. There are actually three passphrases:
+Based on the clue structure referring to the first clause only:
+> "first three words, and then last 5 words"
+
+There are **two passphrases** derived from the first clause of Luke 12:2:
 
 **Layer 1 - Full Image:**
 - Passphrase: `nothing is covered` (lowercase, important!)
+- Source: First 3 words of the first clause
 - Decrypts the entire 1950x2956 pixel image
 
 **Layer 2 - Diagonal Regions:**
 - Passphrase: `that will not be revealed`
+- Source: Last 5 words of the first clause
 - Applied to TWO regions after decrypting layer 1:
   - Right diagonal: 1700x800 pixels at position +100+100 → contains barcode `500077`
   - Left diagonal: 700x800 pixels at position +0+100 → contains barcode `965642`
 
-**Layer 3 - Center Body:**
-- Passphrase: `or hidden that will not be known`
-- This is a decoy - the obvious encrypted center doesn't have the answer
+The "nesting doll" theme is reflected in the two-layer encryption and the two separate barcodes hidden in symmetric diagonal regions.
 
 ### The Process
 
@@ -110,12 +128,17 @@ The puzzle was released on May 12, 2019 with the title "Breakbeats on the Beach"
 **Common mistakes:**
 1. Combining the clue into one passphrase instead of splitting it
 2. Using uppercase "Nothing" instead of lowercase "nothing"
-3. Only checking the obvious center region (which is a decoy)
-4. Trying two-layer encryption but missing the shoulder regions
-5. Not realizing there were TWO barcodes (left and right)
+3. Interpreting "last 5 words" as the entire verse instead of the first clause only
+4. Not realizing Luke 12:2 has two clauses separated by a comma
+5. Testing "that will not be known" (from the second clause) instead of "that will not be revealed" (from the first clause)
+6. Only checking one diagonal region, not both
+7. Not realizing there were TWO barcodes (left and right)
 
 **The critical insights:**
-- The verse structure matters (three clauses = three passphrases)
+- "First three words, and then last 5 words" refers to the FIRST CLAUSE only
+- The first clause is: "Nothing is covered up that will not be revealed,"
+- First 3 words: "nothing is covered" (words 1-3)
+- Last 5 words of first clause: "that will not be revealed" (words 5-9)
 - Case sensitivity is crucial (lowercase works, uppercase doesn't)
 - The diagonal shoulder regions looked like noise but were actually encrypted layers
 - Decrypt the full image FIRST, then crop and decrypt regions (not the other way around)

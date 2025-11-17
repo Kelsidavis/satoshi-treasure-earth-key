@@ -26,17 +26,19 @@ Area:        Near Strandbad Kinzigsee beach
 This matches the puzzle title "Breakbeats on the Beach" and the name "Earth Key".
 Players would travel to this location to retrieve the actual ST-0006 key fragment.
 
-PASSPHRASES (from Luke 12:2)
------------------------------
+PASSPHRASES (from Luke 12:2, first clause only)
+-------------------------------------------------
+
+The clue "first three words, and then last 5 words" refers to the
+FIRST CLAUSE only: "Nothing is covered up that will not be revealed,"
 
 Layer 1: "nothing is covered" (lowercase)
+         First 3 words of first clause
          Decrypts full image (1950x2956 pixels)
 
 Layer 2: "that will not be revealed"
+         Last 5 words of first clause
          Decrypts both diagonal regions containing barcodes
-
-Layer 3: "or hidden that will not be known"
-         Decoy passphrase for center region (no barcode)
 
 STEP-BY-STEP
 ------------
@@ -59,19 +61,22 @@ STEP-BY-STEP
 WHY IT WENT UNSOLVED
 --------------------
 
-1. People combined the clue into one passphrase
-2. Case sensitivity (must be lowercase)
-3. Focus on obvious center region (which is a decoy)
+1. People misinterpreted "last 5 words" as the entire verse
+   instead of the first clause only
+2. Most people tried "that will not be known" (second clause)
+   instead of "that will not be revealed" (first clause)
+3. Case sensitivity (must be lowercase)
 4. Didn't check both diagonal regions
 5. Order matters: decrypt full image FIRST, then crop regions
 
 KEY INSIGHTS
 ------------
 
-- Three passphrases from grammatical structure of Luke 12:2
-- Two barcodes (nesting doll theme!)
+- "First three words, and then last 5 words" = first clause only
+- First clause: "Nothing is covered up that will not be revealed,"
+- Two passphrases from grammatical structure
+- Two barcodes in symmetric diagonal regions (nesting doll theme!)
 - Geographic coordinates for physical retrieval
-- Symmetric regions (check both left and right)
 - Case sensitivity matters
 
 TOOLS REQUIRED

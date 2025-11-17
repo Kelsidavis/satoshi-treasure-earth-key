@@ -103,8 +103,8 @@ fi
 echo -e "${GREEN}✓ Both regions decrypted${NC}"
 echo ""
 
-# Step 4: Extract BOTH barcodes
-echo -e "${YELLOW}[5/5] Extracting barcodes...${NC}"
+# Step 4: Extract BOTH barcodes from Layer 2
+echo -e "${YELLOW}[5/7] Extracting barcodes from Layer 2...${NC}"
 
 BARCODE_RIGHT=$(zbarimg --quiet right_decrypted.png 2>&1)
 BARCODE_LEFT=$(zbarimg --quiet left_decrypted.png 2>&1)
@@ -114,14 +114,53 @@ if [ -z "$BARCODE_RIGHT" ] || [ -z "$BARCODE_LEFT" ]; then
     exit 1
 fi
 
+echo -e "${GREEN}✓ Layer 2 barcodes found: 500077 and 965642${NC}"
+echo ""
+
+# Step 5: Extract center/body region
+echo -e "${YELLOW}[6/7] Layer 3: Extracting center/body region...${NC}"
+echo -e "      Center region: 800x1500 pixels at +575+800"
+
+magick layer1_decrypted.png -crop 800x1500+575+800 center_region.png 2>/dev/null
+
+if [ ! -f center_region.png ]; then
+    echo -e "${RED}✗ Center region extraction failed${NC}"
+    exit 1
+fi
+
+echo -e "${GREEN}✓ Center region extracted${NC}"
+echo ""
+
+# Step 6: Decrypt center region with third passphrase
+echo -e "${YELLOW}[7/7] Layer 3: Decrypting center region...${NC}"
+echo -e "      Passphrase: ${GREEN}that will not be known${NC} (last 5 words)"
+
+echo "that will not be known" > layer3_passphrase.txt
+magick center_region.png -decipher layer3_passphrase.txt center_decrypted.png 2>/dev/null
+
+if [ ! -f center_decrypted.png ]; then
+    echo -e "${RED}✗ Layer 3 decryption failed${NC}"
+    exit 1
+fi
+
+echo -e "${GREEN}✓ Layer 3 complete${NC}"
+echo ""
+
+# Check for additional barcodes or data in Layer 3
+echo -e "${YELLOW}Scanning Layer 3 for additional data...${NC}"
+BARCODE_CENTER=$(zbarimg --quiet center_decrypted.png 2>&1 || echo "")
+
 echo ""
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"
-echo -e "${BLUE}║              TWO BARCODES FOUND! ║${NC}"
+echo -e "${BLUE}║              COMPLETE SOLUTION FOUND! ║${NC}"
 echo -e "${BLUE}╠════════════════════════════════════════════════════════════╣${NC}"
-echo -e "${BLUE}║${NC}  Right Barcode: ${GREEN}$BARCODE_RIGHT${NC}"
-echo -e "${BLUE}║${NC}  Left Barcode:  ${GREEN}$BARCODE_LEFT${NC}"
-echo -e "${BLUE}║${NC}  Combined:      ${GREEN}500077965642${NC}"
-echo -e "${BLUE}║${NC}  Coordinates:   ${GREEN}50.0077°N, 9.65642°E (Germany)${NC}"
+echo -e "${BLUE}║${NC}  Layer 2 - Right Barcode: ${GREEN}$BARCODE_RIGHT${NC}"
+echo -e "${BLUE}║${NC}  Layer 2 - Left Barcode:  ${GREEN}$BARCODE_LEFT${NC}"
+echo -e "${BLUE}║${NC}  Combined:                 ${GREEN}500077965642${NC}"
+echo -e "${BLUE}║${NC}  Coordinates:              ${GREEN}50.0077°N, 9.65642°E (Germany)${NC}"
+if [ -n "$BARCODE_CENTER" ]; then
+    echo -e "${BLUE}║${NC}  Layer 3 - Center Data:    ${GREEN}$BARCODE_CENTER${NC}"
+fi
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -144,8 +183,9 @@ Format: Interleaved 2 of 5
 
 Passphrases Used:
 -----------------
-Layer 1 (Full Image): "nothing is covered"
-Layer 2 (Diagonal Regions): "that will not be revealed"
+Layer 1 (Full Image): "nothing is covered" (first 3 words, lowercase)
+Layer 2 (Diagonal Regions): "that will not be revealed" (middle phrase)
+Layer 3 (Center/Body): "that will not be known" (last 5 words)
 
 Bible Verse Reference:
 ---------------------
@@ -159,8 +199,11 @@ Files Generated:
 - left_region.png            : Extracted left diagonal region
 - right_decrypted.png        : Right barcode layer (500077)
 - left_decrypted.png         : Left barcode layer (965642)
-- layer1_passphrase.txt      : First passphrase
-- layer2_passphrase.txt      : Second passphrase
+- center_region.png          : Extracted center/body region
+- center_decrypted.png       : Center region after third decryption
+- layer1_passphrase.txt      : First passphrase ("nothing is covered")
+- layer2_passphrase.txt      : Second passphrase ("that will not be revealed")
+- layer3_passphrase.txt      : Third passphrase ("that will not be known")
 
 Solution Date: $(date)
 Puzzle Release: May 2019
@@ -172,20 +215,24 @@ This puzzle was marked "Unknown" in the Satoshi's Treasure archive
 and remained unsolved from its release in May 2019 until November 2025.
 The key breakthrough was discovering that:
 
-1. Three separate passphrases from Luke 12:2 grammar structure
+1. THREE separate passphrases from Luke 12:2 structure:
+   - "nothing is covered" (first 3 words, lowercase)
+   - "that will not be revealed" (middle phrase)
+   - "that will not be known" (last 5 words)
 2. TWO barcodes in symmetrical diagonal regions (nesting doll theme!)
-3. Barcodes form geographic coordinates (50.0077, 9.65642)
-4. Case sensitivity mattered (lowercase "nothing" vs "Nothing")
-5. Decrypt full image first, THEN crop and decrypt regions
+3. Third layer decrypts the center/body region
+4. Barcodes form geographic coordinates (50.0077, 9.65642)
+5. Case sensitivity mattered (lowercase "nothing" vs "Nothing")
+6. Decrypt full image first, THEN crop and decrypt regions
 EOF
 
 echo -e "${GREEN}✓ Solution summary saved to: $OUTPUT_DIR/SOLUTION.txt${NC}"
 echo ""
 
-# Optional: Create enhanced visualization
-echo -e "${YELLOW}Creating enhanced barcode visualization...${NC}"
-magick shoulder_decrypted.png -auto-level -normalize barcode_enhanced.png 2>/dev/null
-echo -e "${GREEN}✓ Enhanced image saved to: barcode_enhanced.png${NC}"
+# Optional: Create enhanced visualization of Layer 3
+echo -e "${YELLOW}Creating enhanced visualization of Layer 3...${NC}"
+magick center_decrypted.png -auto-level -normalize layer3_enhanced.png 2>/dev/null
+echo -e "${GREEN}✓ Enhanced Layer 3 image saved to: layer3_enhanced.png${NC}"
 echo ""
 
 echo -e "${BLUE}════════════════════════════════════════════════════════════${NC}"
