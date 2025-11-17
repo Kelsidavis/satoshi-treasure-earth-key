@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+/tmp/
+*.tmp
+*.bak
+*.log
+
+# Output directories (user-generated)
+solution_output_*/
+verify_*.png
+/tmp/
+
+# Large binary files (keep original)
+# quickbrownfox-doll.bmp is kept in images/
+
+# Test artifacts
+test_*.png
+region_*.png
+enhanced_*.png
+barcode_comparison.png
+barcode_location_proof.png
+layer*.png
+shoulder*.png

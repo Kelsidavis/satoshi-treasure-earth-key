@@ -1,0 +1,87 @@
+SATOSHI'S TREASURE - EARTH KEY #6 SOLUTION
+============================================
+
+Puzzle: Earth Key (ST-0006)
+Released: May 12, 2019
+Status: Unsolved for 6+ years
+Solved: November 16, 2025
+
+THE SOLUTION
+------------
+
+Two barcodes discovered in encrypted regions:
+
+Right Barcode: I2/5:500077
+Left Barcode:  I2/5:965642
+Combined:      500077965642
+
+GEOGRAPHIC INTERPRETATION (Most Likely)
+---------------------------------------
+
+Coordinates: 50.0077°N, 9.65642°E
+Location:    Main-Kinzig-Kreis, Hesse, Germany
+Distance:    ~50km from Frankfurt Airport
+Area:        Near Strandbad Kinzigsee beach
+
+This matches the puzzle title "Breakbeats on the Beach" and the name "Earth Key".
+Players would travel to this location to retrieve the actual ST-0006 key fragment.
+
+PASSPHRASES (from Luke 12:2)
+-----------------------------
+
+Layer 1: "nothing is covered" (lowercase)
+         Decrypts full image (1950x2956 pixels)
+
+Layer 2: "that will not be revealed"
+         Decrypts both diagonal regions containing barcodes
+
+Layer 3: "or hidden that will not be known"
+         Decoy passphrase for center region (no barcode)
+
+STEP-BY-STEP
+------------
+
+1. Decrypt full image:
+   magick quickbrownfox-doll.bmp -decipher "nothing is covered" layer1.png
+
+2. Extract and decrypt right diagonal:
+   magick layer1.png -crop 1700x800+100+100 right.png
+   magick right.png -decipher "that will not be revealed" right_dec.png
+   zbarimg right_dec.png
+   → I2/5:500077
+
+3. Extract and decrypt left diagonal:
+   magick layer1.png -crop 700x800+0+100 left.png
+   magick left.png -decipher "that will not be revealed" left_dec.png
+   zbarimg left_dec.png
+   → I2/5:965642
+
+WHY IT WENT UNSOLVED
+--------------------
+
+1. People combined the clue into one passphrase
+2. Case sensitivity (must be lowercase)
+3. Focus on obvious center region (which is a decoy)
+4. Didn't check both diagonal regions
+5. Order matters: decrypt full image FIRST, then crop regions
+
+KEY INSIGHTS
+------------
+
+- Three passphrases from grammatical structure of Luke 12:2
+- Two barcodes (nesting doll theme!)
+- Geographic coordinates for physical retrieval
+- Symmetric regions (check both left and right)
+- Case sensitivity matters
+
+TOOLS REQUIRED
+--------------
+
+ImageMagick (for decryption)
+ZBar (for barcode scanning)
+
+FILE
+----
+
+Original: quickbrownfox-doll.bmp (16MB, Windows BMP)
+Source: https://github.com/suhailvs-archive/treasure
