@@ -4,10 +4,10 @@ This is the solution to Earth Key #6 from Satoshi's Treasure, which had been uns
 
 ## Quick Summary
 
-**The Puzzle:** A Russian nesting doll image with multi-layer encryption and hidden barcodes
-**Release Date:** May 12, 2019
-**Solved:** November 16, 2025
-**Duration:** 6 years, 6 months unsolved
+- **The Puzzle:** A Russian nesting doll image with multi-layer encryption and hidden barcodes
+- **Release Date:** May 12, 2019
+- **Solved:** November 16, 2025
+- **Duration:** 6 years, 6 months unsolved
 
 **The Solution:**
 - Two barcodes hidden in diagonal regions: `500077` and `965642`
@@ -47,18 +47,18 @@ Most people tried combining this into one passphrase. That doesn't work. The tri
 The clue hints at splitting the verse, not combining it. There are actually three passphrases:
 
 **Layer 1 - Full Image:**
-Passphrase: `nothing is covered` (lowercase, important!)
-This decrypts the entire 1950x2956 pixel image.
+- Passphrase: `nothing is covered` (lowercase, important!)
+- Decrypts the entire 1950x2956 pixel image
 
 **Layer 2 - Diagonal Regions:**
-Passphrase: `that will not be revealed`
-Applied to TWO regions after decrypting layer 1:
-- Right diagonal: 1700x800 pixels at position +100+100 → contains barcode `500077`
-- Left diagonal: 700x800 pixels at position +0+100 → contains barcode `965642`
+- Passphrase: `that will not be revealed`
+- Applied to TWO regions after decrypting layer 1:
+  - Right diagonal: 1700x800 pixels at position +100+100 → contains barcode `500077`
+  - Left diagonal: 700x800 pixels at position +0+100 → contains barcode `965642`
 
 **Layer 3 - Center Body:**
-Passphrase: `or hidden that will not be known`
-This is a decoy. The obvious encrypted center doesn't have the answer.
+- Passphrase: `or hidden that will not be known`
+- This is a decoy - the obvious encrypted center doesn't have the answer
 
 ### The Process
 
@@ -192,15 +192,13 @@ earth-key-solution/
 
 ## Technical Details
 
-**Encryption:** ImageMagick's `-encipher` uses AES-256 in CBC mode with SHA-256 key derivation from the passphrase.
-
-**Barcode Format:** Interleaved 2 of 5 (I2/5) - a numeric-only barcode format.
-
-**Original File:**
-- Format: Windows 3.x BMP
-- Size: 16MB
-- Dimensions: 1950x2956 pixels
-- Color: 24-bit RGB
+- **Encryption:** ImageMagick's `-encipher` uses AES-256 in CBC mode with SHA-256 key derivation from the passphrase
+- **Barcode Format:** Interleaved 2 of 5 (I2/5) - numeric-only barcode format
+- **Original File:**
+  - Format: Windows 3.x BMP
+  - Size: 16MB
+  - Dimensions: 1950x2956 pixels
+  - Color: 24-bit RGB
 
 ---
 
