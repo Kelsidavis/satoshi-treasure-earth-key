@@ -14,7 +14,8 @@ This is the solution to Earth Key #6 from Satoshi's Treasure, which had been uns
 - Two barcodes hidden in diagonal regions: `500077` and `965642`
 - Combined value: `500077965642`
 - Most likely interpretation: Geographic coordinates `50.0077°N, 9.65642°E`
-- Location: Near Gemünden am Main, Main-Spessart district, Bavaria, Germany
+- Location: Southwest of Gemünden am Main, Main-Spessart district, Bavaria, Germany
+- Physical destination unclear (likely a geocache or agent meeting point)
 
 ---
 
@@ -111,13 +112,17 @@ The "nesting doll" theme makes perfect sense now - multiple hidden values, just 
 
 ## Geographic Coordinates Theory
 
-The name "Earth Key" plus two 6-digit numbers screams geographic coordinates:
+The name "Earth Key" plus two 6-digit numbers suggests geographic coordinates:
 
 `50.0077°N, 9.65642°E`
 
-This points to an area near Gemünden am Main in the Main-Spessart district of Bavaria, Germany. The area has several bathing lakes with beach facilities, including Sindersbachsee (approximately 5-7 km from the coordinates), which features a designated bathing shore and recreational beach area.
+These coordinates point to an area southwest of Gemünden am Main in the Main-Spessart district of Bavaria, Germany.
 
-Given that Satoshi's Treasure had physical components (field agents, geocaches), this was likely the intended destination. Players would go there, find a geocache or meet an agent, and retrieve the actual ST-0006 key fragment. The puzzle title "Breakbeats on the Beach" may have been referencing one of these local bathing lakes.
+**The "Beach" Connection:**
+The puzzle title "Breakbeats on the Beach" suggested a beach location, which initially seemed puzzling for landlocked Bavaria. However, the area does have bathing lakes (Badeseen) with beach facilities - notably Sindersbachsee, located approximately 6-7 km from these coordinates, which features a designated swimming area with beach access.
+
+**Speculation:**
+Given that Satoshi's Treasure had physical components (field agents, geocaches), these coordinates may have indicated where players should go to retrieve the actual ST-0006 key fragment. Whether the coordinates point to a specific beach, a meeting point near the lakes, or the general area remains unclear. The exact intended destination is unknown - the "beach" connection could be literal, thematic, or simply a red herring.
 
 ---
 
