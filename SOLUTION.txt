@@ -19,9 +19,8 @@ GEOGRAPHIC INTERPRETATION (Most Likely)
 ---------------------------------------
 
 Coordinates: 50.0077°N, 9.65642°E
-Location:    Main-Kinzig-Kreis, Hesse, Germany
-Distance:    ~50km from Frankfurt Airport
-Area:        Near Strandbad Kinzigsee beach
+Location:    Near Gemünden am Main, Main-Spessart district, Bavaria, Germany
+Area:        Near Sindersbachsee and other bathing lakes with beach facilities
 
 This matches the puzzle title "Breakbeats on the Beach" and the name "Earth Key".
 Players would travel to this location to retrieve the actual ST-0006 key fragment.

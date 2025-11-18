@@ -14,7 +14,7 @@ This is the solution to Earth Key #6 from Satoshi's Treasure, which had been uns
 - Two barcodes hidden in diagonal regions: `500077` and `965642`
 - Combined value: `500077965642`
 - Most likely interpretation: Geographic coordinates `50.0077°N, 9.65642°E`
-- Location: Main-Kinzig-Kreis, Hesse, Germany (about 50km from Frankfurt)
+- Location: Near Gemünden am Main, Main-Spessart district, Bavaria, Germany
 
 ---
 
@@ -115,11 +115,9 @@ The name "Earth Key" plus two 6-digit numbers screams geographic coordinates:
 
 `50.0077°N, 9.65642°E`
 
-This points to Main-Kinzig-Kreis in Hesse, Germany. It's about 50km from Frankfurt, near a place called Strandbad Kinzigsee (a beach area on the Kinzig river).
+This points to an area near Gemünden am Main in the Main-Spessart district of Bavaria, Germany. The area has several bathing lakes with beach facilities, including Sindersbachsee (approximately 5-7 km from the coordinates), which features a designated bathing shore and recreational beach area.
 
-Given that Satoshi's Treasure had physical components (field agents, geocaches), this was likely the intended destination. Players would go there, find a geocache or meet an agent, and retrieve the actual ST-0006 key fragment.
-
-The puzzle was released on May 12, 2019 with the title "Breakbeats on the Beach" - possibly referencing a music event or the beach location itself.
+Given that Satoshi's Treasure had physical components (field agents, geocaches), this was likely the intended destination. Players would go there, find a geocache or meet an agent, and retrieve the actual ST-0006 key fragment. The puzzle title "Breakbeats on the Beach" may have been referencing one of these local bathing lakes.
 
 ---
 
