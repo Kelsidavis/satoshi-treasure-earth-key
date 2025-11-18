@@ -15,20 +15,19 @@ Right Barcode: I2/5:500077
 Left Barcode:  I2/5:965642
 Combined:      500077965642
 
-GEOGRAPHIC INTERPRETATION (Speculative)
----------------------------------------
+GEOGRAPHIC COORDINATES
+----------------------
 
 Coordinates: 50.0077°N, 9.65642°E
 Location:    Southwest of Gemünden am Main, Main-Spessart district, Bavaria, Germany
-Nearby:      Sindersbachsee bathing lake (~6-7 km away)
 
 The name "Earth Key" and two 6-digit numbers suggest geographic coordinates.
-The puzzle title "Breakbeats on the Beach" hints at a beach location - there are
-bathing lakes (Badeseen) with beach facilities in this area of Bavaria.
-
-Likely scenario: Players would travel to these coordinates (or nearby) to retrieve
-the actual ST-0006 key fragment from a geocache or field agent. The exact intended
+These coordinates likely indicated where players should retrieve the actual
+ST-0006 key fragment from a geocache or field agent. The exact intended
 destination is unknown.
+
+Note: The puzzle was titled "Breakbeats on the Beach" (May 2019), though the
+title's relevance to the solution is unclear.
 
 PASSPHRASES (from Luke 12:2, first clause only)
 -------------------------------------------------

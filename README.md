@@ -110,7 +110,7 @@ The "nesting doll" theme makes perfect sense now - multiple hidden values, just 
 
 ---
 
-## Geographic Coordinates Theory
+## Geographic Coordinates
 
 The name "Earth Key" plus two 6-digit numbers suggests geographic coordinates:
 
@@ -118,11 +118,9 @@ The name "Earth Key" plus two 6-digit numbers suggests geographic coordinates:
 
 These coordinates point to an area southwest of Gemünden am Main in the Main-Spessart district of Bavaria, Germany.
 
-**The "Beach" Connection:**
-The puzzle title "Breakbeats on the Beach" suggested a beach location, which initially seemed puzzling for landlocked Bavaria. However, the area does have bathing lakes (Badeseen) with beach facilities - notably Sindersbachsee, located approximately 6-7 km from these coordinates, which features a designated swimming area with beach access.
+Given that Satoshi's Treasure had physical components (field agents, geocaches), these coordinates likely indicated where players should retrieve the actual ST-0006 key fragment. The exact intended destination is unknown.
 
-**Speculation:**
-Given that Satoshi's Treasure had physical components (field agents, geocaches), these coordinates may have indicated where players should go to retrieve the actual ST-0006 key fragment. Whether the coordinates point to a specific beach, a meeting point near the lakes, or the general area remains unclear. The exact intended destination is unknown - the "beach" connection could be literal, thematic, or simply a red herring.
+Note: The puzzle was titled "Breakbeats on the Beach" when released in May 2019, though the title's relevance to the solution is unclear.
 
 ---
 
